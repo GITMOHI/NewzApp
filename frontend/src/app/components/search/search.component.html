@@ -1,0 +1,37 @@
+<div>
+  <h2>Search Results for "{{ searchKeyword }}"</h2>
+
+  <div *ngIf="loading" class="loader">
+    Loading...
+  </div>
+
+  <div class="search-container" *ngIf="!loading && validArticles.length > 0; else noResults">
+    <div *ngFor="let article of currentPageArticles" class="article-card-container">
+      <div class="article-card">
+        <img [src]="article.urlToImage || 'assets/placeholder.png'" 
+          alt="Image for {{ article.title }}"
+          class="article-image"
+        />
+        <div class="article-details">
+          <h3 class="article-title">{{ article.title || 'No Title' }}</h3>
+          <p class="article-description">
+            {{ article.description || 'No description available.' }}
+          </p>
+          <a [href]="article.url" target="_blank" rel="noopener noreferrer" class="article-link">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!loading && validArticles.length > 0" class="pagination-controls">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalItems / itemsPerPage | number: '1.0-0' }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage >= totalItems / itemsPerPage">Next</button>
+  </div>
+
+  <ng-template #noResults>
+    <p>No results found for "{{ searchKeyword }}". Try another search.</p>
+  </ng-template>
+</div>

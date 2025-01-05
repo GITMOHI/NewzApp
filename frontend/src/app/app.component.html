@@ -1,0 +1,109 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <a routerLink="/" class="navbar-logo">NEWZ</a>
+    <div class="navbar-links">
+      <a routerLink="/" class="navbar-link">Home</a>
+      <a routerLink="/about" class="navbar-link">About</a>
+      <a routerLink="/contact" class="navbar-link">Contact</a>
+      
+      <!-- Search Form -->
+      <form class="navbar-search" (submit)="onSearch(searchKeyword)">
+        <input
+          type="text"
+          [(ngModel)]="searchKeyword"
+          name="search"
+          placeholder="Search by topic..."
+          class="search-input"
+          required
+        />
+        <button type="submit" class="search-button">Search</button>
+      </form>
+
+      <!-- Avatar Dropdown -->
+      <div class="navbar-avatar" (click)="toggleDropdown()">
+        <img src="assets/avatar.png" alt="User Avatar" class="avatar-image" />
+        <div class="dropdown-menu" *ngIf="isDropdownOpen">
+          <ng-container *ngIf="isLoggedIn; else notLoggedIn">
+            <p class="dropdown-item">Hello, {{ username }} {{ isAdmin ? '(admin)' : '' }}</p>
+            <button *ngIf="isAdmin" class="dropdown-item" routerLink="/add-news">Add News</button>
+            <button class="dropdown-item" (click)="logout()">Logout</button>
+          </ng-container>
+          <ng-template #notLoggedIn>
+            <button class="dropdown-item" routerLink="/login">Login</button>
+            <button class="dropdown-item" routerLink="/register">Register</button>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Router outlet for routing -->
+<router-outlet></router-outlet>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Branding and Tagline -->
+    <div class="footer-branding">
+      <a href="/" class="footer-logo">NEWZ</a>
+      <p class="footer-tagline">Your trusted source for breaking news and insights worldwide.</p>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="footer-links">
+      <h4 class="footer-heading">Quick Links</h4>
+      <ul>
+        <li><a href="/about" class="footer-link">About Us</a></li>
+        <li><a href="/contact" class="footer-link">Contact</a></li>
+        <li><a href="/privacy-policy" class="footer-link">Privacy Policy</a></li>
+        <li><a href="/terms-of-service" class="footer-link">Terms of Service</a></li>
+        <li><a href="/sitemap" class="footer-link">Sitemap</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="footer-social">
+      <h4 class="footer-heading">Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://twitter.com" target="_blank" class="social-icon">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://facebook.com" target="_blank" class="social-icon">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-icon">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Newsletter Subscription -->
+    <div class="footer-newsletter">
+      <h4 class="footer-heading">Subscribe to Our Newsletter</h4>
+      <p>Get the latest news and updates delivered straight to your inbox.</p>
+      <form>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="footer-input"
+          required
+        />
+        <button type="submit" class="footer-button">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+   <div class="footer-bottom-parent">
+    <div class="footer-bottom">
+      <p class="footer-text">© 2024 NEWZ. All Rights Reserved.</p>
+      <p class="footer-credit">Designed with ❤️ by Team NEWZ</p>
+    </div>
+   </div>
+
+</footer>
+

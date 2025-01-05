@@ -1,0 +1,28 @@
+<div *ngIf="article" class="article-container">
+  <!-- Article Image -->
+  <div class="article-image-container">
+    <img [src]="article.urlToImage" alt="{{ article.title }}" class="article-image" />
+  </div>
+
+  <!-- Article Content -->
+  <div class="article-content-container">
+    <!-- Title and Meta -->
+    <div class="article-header">
+      <h1 class="article-title">{{ article.title }}</h1>
+      <div class="article-meta">
+        <span class="article-source">By {{ article.source.name }}</span>
+        <span class="article-date">| {{ article.publishedAt | date: 'mediumDate' }}</span>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="article-body">
+      <p>{{ article.content }}</p>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="article-footer">
+      <a class="read-more-btn" [href]="article.url" target="_blank" rel="noopener noreferrer">Read Full Article</a>
+    </div>
+  </div>
+</div>

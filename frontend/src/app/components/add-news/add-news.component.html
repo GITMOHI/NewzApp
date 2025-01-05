@@ -1,0 +1,49 @@
+
+
+   <div class="add-news-form">
+    <h2>Add News</h2>
+    
+    <form (ngSubmit)="addNews()">
+      <div class="form-row">
+        <label for="title">Title:</label>
+        <input id="title" type="text" [(ngModel)]="title" name="title" required />
+      </div>
+  
+      <div class="form-row">
+        <label for="sourceName">Source Name:</label>
+        <input id="sourceName" type="text" [(ngModel)]="sourceName" name="sourceName" required />
+      </div>
+  
+      <div class="form-row">
+        <label for="content">Content:</label>
+        <textarea id="content" [(ngModel)]="content" name="content" required></textarea>
+      </div>
+
+      <div class="form-row">
+        <label for="content">Description</label>
+        <textarea id="content" [(ngModel)]="description" name="description" required></textarea>
+      </div>
+  
+      <div class="form-row">
+        <label for="url">URL:</label>
+        <input id="url" type="text" [(ngModel)]="url" name="url" required />
+      </div>
+  
+      <div class="form-row">
+        <label for="image">Image:</label>
+        <input id="image" type="file" (change)="onFileChange($event)" />
+      </div>
+  
+      <div class="form-action">
+        <button type="submit" [disabled]="loading">
+          <span *ngIf="loading" class="spinner"></span>
+          Add News
+        </button>
+      </div>
+    </form>
+  
+    <div *ngIf="notification" class="notification" [ngClass]="notification.type">
+      {{ notification.message }}
+    </div>
+  </div>
+  

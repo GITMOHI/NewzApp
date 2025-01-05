@@ -1,0 +1,35 @@
+<div *ngIf="isLoading" class="loader-container">
+  <div class="loader"></div> 
+  <p>Loading...</p> 
+</div>
+
+<div *ngIf="!isLoading" class="news-container">
+  <div *ngFor="let article of articles; let i=index" class="news-card">
+    <img 
+      [src]="article.urlToImage || 'assets/placeholder.png'" 
+      alt="Article Image" 
+      class="news-image"
+    />
+
+    <div class="news-content">
+      <h3 class="news-title">{{ article.title }}</h3>
+
+      <p class="news-description">
+        {{ article.description || 'No description available.' }}
+      </p>
+
+      <div class="news-footer">
+        <span class="news-source">
+          {{ article.source?.name || 'Unknown Source' }}
+        </span>
+
+        <span class="news-date">
+          {{ article.publishedAt  }}
+        </span>
+      </div>
+
+      <button class="read-more-btn" routerLink="/article/{{ i }}">Read More</button>  
+      
+    </div>
+  </div>
+</div>
