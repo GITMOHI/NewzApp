@@ -9,9 +9,7 @@ import { environment } from '../../environments/environment'; // Import environm
 })
 export class NewsService {
   // Use dynamic detection of environment
-  private API_URL = this.isProduction()
-    ? 'https://news-app-seilse.vercel.app/top-headlines'
-    : `${environment.Backend_URI}/news/all`;
+  private API_URL = `${environment.Backend_URI}/news/all`;
 
   constructor(private http: HttpClient) {}
 

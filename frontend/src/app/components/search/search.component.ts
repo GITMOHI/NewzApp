@@ -32,9 +32,7 @@ export class SearchComponent implements OnInit {
 
   private setApiUrl(): void {
     const isProduction = window.location.hostname !== 'localhost';
-    this.apiUrl = isProduction
-      ? '/api/news'
-      : `${environment.Backend_URI}/news/search?query=${this.searchKeyword}`;
+    this.apiUrl =`${environment.Backend_URI}/news/search?query=${this.searchKeyword}`;
   }
 
   fetchNews(): void {
