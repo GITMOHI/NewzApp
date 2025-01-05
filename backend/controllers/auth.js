@@ -70,7 +70,7 @@ exports.login = async (req, res) => {
 // Register a new user
 exports.register = async (req, res) => {
   const { name, email, password} = req.body;
-  role = 'user';
+  role = 'viewer';
 
   try {
     // Check if user already exists
