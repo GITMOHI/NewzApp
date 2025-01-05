@@ -1,5 +1,5 @@
 export const environment = {
     production: false,
-    Backend_URI: 'http://localhost:3000',
+    Backend_URI: 'https://newzapp-1-lnro.onrender.com',
   };
   
