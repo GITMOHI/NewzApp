@@ -10,7 +10,7 @@ const newsRoutes = require('./routes/news');
 const userRoutes = require('./routes/users');
 
 const corsOptions = {
-  origin: ['http://localhost:4200', 'https://your-production-site.com'],
+  origin: ['http://localhost:4200', 'https://newzapp-1-lnro.onrender.com'],
   credentials: true,
 };
 // Middleware
