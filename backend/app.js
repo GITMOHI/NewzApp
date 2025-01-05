@@ -10,7 +10,7 @@ const newsRoutes = require('./routes/news');
 const userRoutes = require('./routes/users');
 
 const corsOptions = {
-  origin: ['http://localhost:4200', 'https://newz-app-vcdy-h6b3dmpce-gitmohis-projects.vercel.app'],
+  origin: ['http://localhost:4200', 'newz-app-front.vercel.app'],
   credentials: true,
 };
 // Middleware
