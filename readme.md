@@ -126,6 +126,10 @@ GET /api/news/search?q=technology
 - **Body Parameters**:
   - `title`: Title of the news article.
   - `content`: Content of the news article.
+  - `url`: main link to the source.
+  - `description`: small description of the news article.
+  - `image`: image of the news article
+
 
 **Example Request**:
 ```http
