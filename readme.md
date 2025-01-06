@@ -120,7 +120,10 @@ GET /api/news/search?q=technology
   {
     "id": 1,
     "title": "Technology News",
-    "content": "Content about technology."
+    "content": "Content of the new article.",
+    "url": " main link to the source.",
+    "description": "small description of the news article",
+    "image": "image of the news article"
   }
 ]
 ```
