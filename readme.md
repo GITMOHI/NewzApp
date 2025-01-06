@@ -87,13 +87,19 @@ GET /api/news/all
 [
   {
     "id": 1,
-    "title": "News Title 1",
-    "content": "Content of the news article 1."
+   "title": "New Article Title",
+  "content": "Content of the new article.",
+  "url": " main link to the source.",
+  "description": "small description of the news article",
+  "image": "image of the news article"
   },
   {
     "id": 2,
-    "title": "News Title 2",
-    "content": "Content of the news article 2."
+"title": "New Article Title",
+  "content": "Content of the new article.",
+  "url": " main link to the source.",
+  "description": "small description of the news article",
+  "image": "image of the news article"
   }
 ]
 ```
