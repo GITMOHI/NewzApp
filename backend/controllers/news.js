@@ -28,6 +28,7 @@ exports.createNews = async (req, res) => {
 };  
 
 exports.getAllNews = async (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://newz-app-front.vercel.app');
     try {
       console.log('Get all news');
       const news = await News.find(); // Fetch all news articles
