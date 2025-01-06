@@ -137,6 +137,9 @@ POST /api/news
 {
   "title": "New Article Title",
   "content": "Content of the new article."
+  "url": " main link to the source."
+  "description": "small description of the news article"
+  "image": "image of the news article"
 }
 ```
 
@@ -154,14 +157,16 @@ POST /api/news
 - **URL**: `/api/auth/register`
 - **Description**: Register a new user.
 - **Body Parameters**:
-  - `username`: Username of the user.
+  - `name`: Username of the user.
   - `password`: Password of the user.
+  - `email`: email of the user.
+  - `confirm password`: Password of the user.
 
 **Example Request**:
 ```http
 POST /api/auth/register
 {
-  "username": "newuser",
+  "email": "newuser@gmail.com",
   "password": "password123"
 }
 ```
@@ -178,14 +183,14 @@ POST /api/auth/register
 - **URL**: `/api/auth/login`
 - **Description**: Login a user and get a token.
 - **Body Parameters**:
-  - `username`: Username of the user.
+  - `email`: email of the user.
   - `password`: Password of the user.
 
 **Example Request**:
 ```http
 POST /api/auth/login
 {
-  "username": "existinguser",
+  "email": "existinguser@gmail.com",
   "password": "password123"
 }
 ```
