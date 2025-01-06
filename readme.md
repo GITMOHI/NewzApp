@@ -86,20 +86,20 @@ GET /api/news/all
 ```json
 [
   {
-    "id": 1,
+   "id": 1,
    "title": "New Article Title",
-  "content": "Content of the new article.",
-  "url": " main link to the source.",
-  "description": "small description of the news article",
-  "image": "image of the news article"
+   "content": "Content of the new article.",
+   "url": " main link to the source.",
+   "description": "small description of the news article",
+   "image": "image of the news article"
   },
   {
     "id": 2,
-"title": "New Article Title",
-  "content": "Content of the new article.",
-  "url": " main link to the source.",
-  "description": "small description of the news article",
-  "image": "image of the news article"
+    "title": "New Article Title",
+    "content": "Content of the new article.",
+    "url": " main link to the source.",
+    "description": "small description of the news article",
+    "image": "image of the news article"
   }
 ]
 ```
